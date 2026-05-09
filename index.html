@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Gaming | Esports Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<div id="tg-cursor"></div>
+
+<!-- =============================== NAVBAR =============================== -->
+<nav class="navbar" id="navbar">
+    <a href="#home" class="logo">
+        <img src="assets/hero-bg.png" alt="TG Logo" class="logo-img">
+        TG<span>HUB</span>
+    </a>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#roster">Roster</a>
+        <a href="#shop">Shop</a>
+        <a href="login.html" class="btn-gold" id="nav-login-btn">Login</a>
+        <a href="support.html" class="nav-link-support">Support</a>
+        <div class="nav-user-avatar" id="nav-user-avatar" title="Logout">TG</div>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- =============================== HERO =============================== -->
+<section id="home" class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+        <p class="hero-eyebrow">INDIA'S PREMIER ESPORTS SQUAD</p>
+        <h1 class="glitch" data-text="TOTAL GAMING">TOTAL GAMING</h1>
+        <p class="hero-sub">LEAVING A LEGACY IN EVERY MATCH</p>
+        <div class="hero-cta-group">
+            <a href="#roster" class="btn-main">MEET THE SQUAD</a>
+        </div>
+    </div>
+    <div class="hero-scroll-hint">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- =============================== ABOUT US =============================== -->
+<section id="about" class="about-sec">
+    <h2 class="sec-title">WHO WE ARE</h2>
+    <div class="about-wrapper">
+
+        <!-- Left: Stat counters -->
+        <div class="about-stats">
+            <div class="about-stat-card">
+                <span class="about-stat-num" data-target="2018">0</span>
+                <span class="about-stat-label">FOUNDED</span>
+            </div>
+            <div class="about-stat-card">
+                <span class="about-stat-num" data-target="6">0</span>
+                <span class="about-stat-label">MAJOR TITLES</span>
+            </div>
+            <div class="about-stat-card">
+                <span class="about-stat-num" data-target="40">0</span>
+                <span class="about-stat-suffix">M+</span>
+                <span class="about-stat-label">SUBSCRIBERS</span>
+            </div>
+            <div class="about-stat-card">
+                <span class="about-stat-num" data-target="500">0</span>
+                <span class="about-stat-suffix">+</span>
+                <span class="about-stat-label">MATCHES PLAYED</span>
+            </div>
+        </div>
+
+        <!-- Right: Story -->
+        <div class="about-story">
+            <div class="about-story-eyebrow">THE TG STORY</div>
+            <h3 class="about-headline">FROM CONTENT TO <span>CHAMPIONS</span></h3>
+            <p class="about-text">
+                Total Gaming was born in 2018, built from the ground up by <strong>Ajju Bhai</strong> (Ajendra Variya) — one of India's most iconic gaming content creators. What started as a YouTube channel documenting Free Fire gameplay quickly evolved into a cultural movement across Indian gaming.
+            </p>
+            <p class="about-text">
+                In August 2020, the esports division was officially launched by signing The Mafia's roster, marking TG's entry into competitive Free Fire. Since then, the squad has dominated India's biggest stages — winning the <strong>World Esports Cup 2021</strong>, the <strong>Esportz Invitational 2022</strong>, and sweeping both BR &amp; CS titles at <strong>FFMIC 2025</strong>.
+            </p>
+            <p class="about-text">
+                Revived stronger than ever in March 2025 after a brief hiatus, TG now fields one of the most feared rosters in South Asian esports. The mission remains the same: dominate every lobby, inspire every gamer.
+            </p>
+            <div class="founder-wrapper">
+                <div class="about-founder-tag">
+                    <div class="founder-avatar">AB</div>
+                    <div class="founder-info">
+                        <span class="founder-name">AJJU BHAI</span>
+                        <span class="founder-role">Founder &amp; Visionary</span>
+                    </div>
+                </div>
+
+                <!-- Hover Popup Card -->
+                <div class="founder-popup-card">
+                    <div class="fpc-img-wrapper">
+                        <img src="assets/ajju.jpg" alt="Ajju Bhai – Founder of Total Gaming" loading="lazy">
+                        <div class="fpc-img-overlay"></div>
+                    </div>
+                    <div class="fpc-body">
+                        <span class="fpc-role-tag">FOUNDER</span>
+                        <h3 class="fpc-name">AJJU BHAI</h3>
+                        <p class="fpc-real-name">Ajendra Variya</p>
+                        <div class="fpc-stats">
+                            <div class="fpc-stat">
+                                <span class="fpc-stat-val">40M+</span>
+                                <span class="fpc-stat-lbl">SUBS</span>
+                            </div>
+                            <div class="fpc-stat">
+                                <span class="fpc-stat-val">2018</span>
+                                <span class="fpc-stat-lbl">SINCE</span>
+                            </div>
+                        </div>
+                        <p class="fpc-bio">India's most iconic Free Fire content creator. Built Total Gaming from a YouTube channel into a championship-winning esports dynasty.</p>
+                        <div class="fpc-links">
+                            <a href="https://www.youtube.com/@TotalGaming093" target="_blank" rel="noopener" class="fpc-link yt"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.9 31.9 0 0 0 0 12a31.9 31.9 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg> YouTube</a>
+                            <a href="https://www.instagram.com/totalgaming_official/" target="_blank" rel="noopener" class="fpc-link ig"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.3-2.2.4-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4a3.9 3.9 0 0 1-1.4-.9 3.9 3.9 0 0 1-.9-1.4c-.2-.4-.3-1.1-.4-2.2-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.3 2.2-.4 1.3-.1 1.6-.1 4.9-.1zm0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4 .6c-.8.3-1.5.7-2.2 1.4A6 6 0 0 0 .6 4C.3 4.8.1 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c.1 1.3.2 2.2.5 3 .3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.5 3 .5 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.2 3-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.5-3 .1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.2-2.2-.5-3-.3-.8-.7-1.5-1.4-2.2A6 6 0 0 0 20 .6c-.8-.3-1.7-.5-3-.5C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.5a1.4 1.4 0 1 0 0-2.9 1.4 1.4 0 0 0 0 2.9z"/></svg> Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Values Grid -->
+    <div class="about-values-grid">
+        <div class="about-value-card">
+            <div class="value-icon">⚔️</div>
+            <h4>COMPETE</h4>
+            <p>We play every match like it's the Grand Final. No shortcuts, no excuses — only execution.</p>
+        </div>
+        <div class="about-value-card">
+            <div class="value-icon">🤝</div>
+            <h4>UNITY</h4>
+            <p>Four players, one brain. Our coordination and trust define TG's legendary teamplay.</p>
+        </div>
+        <div class="about-value-card">
+            <div class="value-icon">🔥</div>
+            <h4>PASSION</h4>
+            <p>From scrims at midnight to tournaments under pressure — the grind never stops.</p>
+        </div>
+        <div class="about-value-card">
+            <div class="value-icon">🏆</div>
+            <h4>LEGACY</h4>
+            <p>Championships come and go. We're building something that lasts — a dynasty.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =============================== ROSTER =============================== -->
+<section id="roster" class="roster-sec">
+    <h2 class="sec-title">THE ELITE SQUAD</h2>
+    <div class="card-grid">
+
+        <!-- Player 1: Mafia -->
+        <div class="p-card">
+            <div class="p-card-inner">
+                <!-- FRONT -->
+                <div class="p-front">
+                    <div class="p-flip-hint">↻</div>
+                    <img src="assets/mafia.png" alt="Mafia" loading="lazy">
+                    <div class="p-front-label">
+                        <span>Sniper</span>
+                        <h3>MAFIA</h3>
+                    </div>
+                </div>
+                <!-- BACK -->
+                <div class="p-back">
+                    <span class="p-role">Sniper</span>
+                    <h3 class="p-name">IQOOTG.MAFIA</h3>
+                    <div class="p-stats">
+                        <div class="p-stat-box">
+                            <span class="stat-val">2.8</span>
+                            <span class="stat-lbl">K/D</span>
+                        </div>
+                        <div class="p-stat-box">
+                            <span class="stat-val">48%</span>
+                            <span class="stat-lbl">WIN</span>
+                        </div>
+                    </div>
+                    <div class="p-achievements">
+                        <span>🥇 FFMIC BR 2025</span>
+                        <span>🥇 FFMIC CS 2025</span>
+                        <span>MVP X 5</span>
+                    </div>
+                    <div class="p-social-links">
+                        <a href="https://www.youtube.com/@TGMAFIAA" target="_blank" rel="noopener" class="soc-btn yt">YouTube</a>
+                        <a href="https://www.instagram.com/tg_mafiaa7/" target="_blank" rel="noopener" class="soc-btn ig">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player 2: Delete -->
+        <div class="p-card">
+            <div class="p-card-inner">
+                <!-- FRONT -->
+                <div class="p-front">
+                    <div class="p-flip-hint">↻</div>
+                    <img src="assets/delete.png" alt="Delete" loading="lazy">
+                    <div class="p-front-label">
+                        <span>Supporter</span>
+                        <h3>DELETE</h3>
+                    </div>
+                </div>
+                <!-- BACK -->
+                <div class="p-back">
+                    <span class="p-role">Supporter</span>
+                    <h3 class="p-name">IQOOTG.DELETE</h3>
+                    <div class="p-stats">
+                        <div class="p-stat-box">
+                            <span class="stat-val">3.1</span>
+                            <span class="stat-lbl">K/D</span>
+                        </div>
+                        <div class="p-stat-box">
+                            <span class="stat-val">55%</span>
+                            <span class="stat-lbl">WIN</span>
+                        </div>
+                    </div>
+                    <div class="p-achievements">
+                        <span>🏆 WEC</span>
+                        <span>🏆 FFMIC BR 2025</span>
+                        <span>🏆 FFPL</span>
+                        <span>🏆 FFMIC CS 2025</span>
+                        <span>🥈 FFPL WT</span>
+                        <span>🥉 FFIC</span>
+                        <span>🥉 FFMIC BR 2026</span>
+                    </div>
+                    <div class="p-social-links">
+                        <a href="https://www.youtube.com/@tgdelete25" target="_blank" rel="noopener" class="soc-btn yt">YouTube</a>
+                        <a href="https://www.instagram.com/tg_delete25/" target="_blank" rel="noopener" class="soc-btn ig">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player 3: Aztec -->
+        <div class="p-card">
+            <div class="p-card-inner">
+                <!-- FRONT -->
+                <div class="p-front">
+                    <div class="p-flip-hint">↻</div>
+                    <img src="assets/aztec.png" alt="Aztec" loading="lazy">
+                    <div class="p-front-label">
+                        <span>IGL / Captain</span>
+                        <h3>AZTEC</h3>
+                    </div>
+                </div>
+                <!-- BACK -->
+                <div class="p-back">
+                    <span class="p-role">IGL / Captain</span>
+                    <h3 class="p-name">IQOOTG.AZTEC</h3>
+                    <div class="p-stats">
+                        <div class="p-stat-box">
+                            <span class="stat-val">2.2</span>
+                            <span class="stat-lbl">K/D</span>
+                        </div>
+                        <div class="p-stat-box">
+                            <span class="stat-val">100%</span>
+                            <span class="stat-lbl">STRAT</span>
+                        </div>
+                    </div>
+                    <div class="p-achievements">
+                        <span>🥇 FFMIC BR 2025</span>
+                        <span>🥇 FFMIC CS 2025</span>
+                    </div>
+                    <div class="p-social-links">
+                        <a href="https://www.youtube.com/@akaaztec7" target="_blank" rel="noopener" class="soc-btn yt">YouTube</a>
+                        <a href="https://www.instagram.com/tg.aztec06/" target="_blank" rel="noopener" class="soc-btn ig">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player 4: Shanky -->
+        <div class="p-card">
+            <div class="p-card-inner">
+                <!-- FRONT -->
+                <div class="p-front">
+                    <div class="p-flip-hint">↻</div>
+                    <img src="assets/shanky.png" alt="Shanky" loading="lazy">
+                    <div class="p-front-label">
+                        <span>Rusher</span>
+                        <h3>SHANKY</h3>
+                    </div>
+                </div>
+                <!-- BACK -->
+                <div class="p-back">
+                    <span class="p-role">Rusher</span>
+                    <h3 class="p-name">IQOOTG.SHANKY</h3>
+                    <div class="p-stats">
+                        <div class="p-stat-box">
+                            <span class="stat-val">2.5</span>
+                            <span class="stat-lbl">K/D</span>
+                        </div>
+                        <div class="p-stat-box">
+                            <span class="stat-val">60%</span>
+                            <span class="stat-lbl">WIN</span>
+                        </div>
+                    </div>
+                    <div class="p-achievements">
+                        <span>🥇 FFMIC BR 2025</span>
+                        <span>🥇 FFMIC CS 2025</span>
+                        <span>FFMIC MVP 2025 X 1</span>
+                    </div>
+                    <div class="p-social-links">
+                        <a href="https://www.youtube.com/@TG_Shanky27" target="_blank" rel="noopener" class="soc-btn yt">YouTube</a>
+                        <a href="https://www.instagram.com/tg.shanky27/" target="_blank" rel="noopener" class="soc-btn ig">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player 5: FozyAjay -->
+        <div class="p-card">
+            <div class="p-card-inner">
+                <!-- FRONT -->
+                <div class="p-front">
+                    <div class="p-flip-hint">↻</div>
+                    <img src="assets/ajay.png" alt="FozyAjay" loading="lazy">
+                    <div class="p-front-label">
+                        <span>Coach & Mentor</span>
+                        <h3>FOZYAJAY</h3>
+                    </div>
+                </div>
+                <!-- BACK -->
+                <div class="p-back">
+                    <span class="p-role">Coach & Mentor</span>
+                    <h3 class="p-name">IQOOTG.FOZYAJAY</h3>
+                    <div class="p-stats">
+                        <div class="p-stat-box">
+                            <span class="stat-val">99%</span>
+                            <span class="stat-lbl">STRAT</span>
+                        </div>
+                        <div class="p-stat-box">
+                            <span class="stat-val">5Y+</span>
+                            <span class="stat-lbl">EXP</span>
+                        </div>
+                    </div>
+                    <div class="p-achievements">
+                        <span>🥇🏆 FFMIC LAN CS</span>
+                        <span>🥇🏆 FFMIC LAN BR</span>
+                        <span>🥇 FFIC</span>
+                        <span>🥇 FFPL</span>
+                        <span>🥇 TITAN INV CS</span>
+                        <span>🥇 BRAWLER BASH</span>
+                        <span>🥉 ASIA ALL STAR PRO</span>
+                        <span>🥇🏆 WEC</span>
+                    </div>
+                    <div class="p-social-links">
+                        <a href="https://www.youtube.com/@FOZYAJAY" target="_blank" rel="noopener" class="soc-btn yt">YouTube</a>
+                        <a href="https://www.instagram.com/fozyajay/" target="_blank" rel="noopener" class="soc-btn ig">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- =============================== SHOP =============================== -->
+<section id="shop" class="shop-sec">
+    <h2 class="sec-title">OFFICIAL MERCH</h2>
+    <div class="shop-container">
+        <div class="jersey-display">
+            <div class="spotlight"></div>
+            <img src="assets/jersey-front1.png" alt="TG Pro Jersey 2026" class="jersey-img">
+        </div>
+        <div class="shop-info">
+            <p class="shop-tag">NEW DROP · 2026 SEASON</p>
+            <h3>TG PRO JERSEY 2026</h3>
+            <p class="shop-desc">High-performance breathable fabric with premium gold embroidery. Worn by the champions.</p>
+            <div class="price">₹1,999</div>
+            <button class="btn-gold">BUY NOW →</button>
+        </div>
+    </div>
+</section>
+
+<!-- =============================== ACHIEVEMENTS =============================== -->
+<section id="achievements" class="trophy-sec">
+    <h2 class="sec-title">OUR LEGACY</h2>
+    <div class="timeline">
+        <div class="t-item">
+            <div class="t-year">2026</div>
+            <div class="t-content">
+                <h4>Zee Media - Arena of Champions</h4>
+                <p>Their most recent major official win, secured in January 2026.</p>
+            </div>
+        </div>
+        <div class="t-item">
+            <div class="t-year">2025</div>
+            <div class="t-content">
+                <h4>Free Fire MAX India Cup (Clash Squad)</h4>
+                <p>A historic "double win," as they also took the trophy for the CS format during the same tournament season.</p>
+            </div>
+        </div>
+        <div class="t-item">
+            <div class="t-year">2025</div>
+            <div class="t-content">
+                <h4>Free Fire MAX India Cup (Battle Royale)</h4>
+                <p>They secured 1st place in the main BR format of the national championship.</p>
+            </div>
+        </div>
+        <div class="t-item">
+            <div class="t-year">2022</div>
+            <div class="t-content">
+                <h4>World Esports Cup (WEC)</h4>
+                <p>A massive victory where they represented India and won against top teams from neighboring countries.</p>
+            </div>
+        </div>
+        <div class="t-item">
+            <div class="t-year">2021</div>
+            <div class="t-content">
+                <h4>Free Fire Pro League (FFPL) India Summer</h4>
+                <p>Their first major breakthrough in the official Garena circuit.</p>
+            </div>
+        </div>
+        <div class="t-item">
+            <div class="t-year">2020</div>
+            <div class="t-content">
+                <h4>Free Fire India Championship (FFIC) Fall</h4>
+                <p>One of their earliest major official titles that established Ajjubhai's team as a powerhouse.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============================== WINNING MOMENTS GALLERY =============================== -->
+<section id="gallery" class="gallery-sec">
+    <h2 class="sec-title">WINNING MOMENTS</h2>
+    <div class="gallery-carousel">
+        <div class="gallery-track">
+            <!-- Original set -->
+            <div class="gallery-slide">
+                <img src="assets/p1.png" alt="TG Esports Winning Moment 1" loading="lazy">
+                <div class="slide-overlay"><span>🏆 CHAMPIONSHIP VICTORY</span></div>
+            </div>
+            <div class="gallery-slide">
+                <img src="assets/p2.png" alt="TG Esports Winning Moment 2" loading="lazy">
+                <div class="slide-overlay"><span>⚔️ TOURNAMENT DOMINATION</span></div>
+            </div>
+            <div class="gallery-slide">
+                <img src="assets/p3.png" alt="TG Esports Winning Moment 3" loading="lazy">
+                <div class="slide-overlay"><span>🔥 SQUAD CELEBRATION</span></div>
+            </div>
+            <div class="gallery-slide">
+                <img src="assets/p4.png" alt="TG Esports Winning Moment 4" loading="lazy">
+                <div class="slide-overlay"><span>💪 CLUTCH PLAY</span></div>
+            </div>
+            <div class="gallery-slide">
+                <img src="assets/p5.png" alt="TG Esports Winning Moment 5" loading="lazy">
+                <div class="slide-overlay"><span>👑 LEGENDS OF FREE FIRE</span></div>
+            </div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="gallery-slide">
+                <img src="assets/p1.png" alt="TG Esports Winning Moment 1" loading="lazy">
+                <div class="slide-overlay"><span>🏆 CHAMPIONSHIP VICTORY</span></div>
+            </div>
+            <div class="gallery-slide">
+                <img src="assets/p2.png" alt="TG Esports Winning Moment 2" loading="lazy">
+                <div class="slide-overlay"><span>⚔️ TOURNAMENT DOMINATION</span></div>
+            </div>
+            <div class="gallery-slide">
+                <img src="assets/p3.png" alt="TG Esports Winning Moment 3" loading="lazy">
+                <div class="slide-overlay"><span>🔥 SQUAD CELEBRATION</span></div>
+            </div>
+            <div class="gallery-slide">
+                <img src="assets/p4.png" alt="TG Esports Winning Moment 4" loading="lazy">
+                <div class="slide-overlay"><span>💪 CLUTCH PLAY</span></div>
+            </div>
+            <div class="gallery-slide">
+                <img src="assets/p5.png" alt="TG Esports Winning Moment 5" loading="lazy">
+                <div class="slide-overlay"><span>👑 LEGENDS OF FREE FIRE</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =============================== SPONSORS =============================== -->
+<section class="sponsors-bar">
+    <div class="marquee">
+        <div class="track">
+            <span class="s-logo sponsor-has-popup">FREEFIRE MAX<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/ffm.png" alt="Free Fire Max"></div><div class="spc-body"><h4>FREE FIRE MAX</h4><p>Official Battle Royale Title</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">IQOO<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/iqoo.png" alt="iQOO"></div><div class="spc-body"><h4>iQOO</h4><p>Official Device Partner</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">FREEFIRE MAX<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/ffm.png" alt="Free Fire Max"></div><div class="spc-body"><h4>FREE FIRE MAX</h4><p>Official Battle Royale Title</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">IQOO<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/iqoo.png" alt="iQOO"></div><div class="spc-body"><h4>iQOO</h4><p>Official Device Partner</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">FREEFIRE MAX<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/ffm.png" alt="Free Fire Max"></div><div class="spc-body"><h4>FREE FIRE MAX</h4><p>Official Battle Royale Title</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">IQOO<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/iqoo.png" alt="iQOO"></div><div class="spc-body"><h4>iQOO</h4><p>Official Device Partner</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">FREEFIRE MAX<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/ffm.png" alt="Free Fire Max"></div><div class="spc-body"><h4>FREE FIRE MAX</h4><p>Official Battle Royale Title</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">IQOO<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/iqoo.png" alt="iQOO"></div><div class="spc-body"><h4>iQOO</h4><p>Official Device Partner</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">FREEFIRE MAX<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/ffm.png" alt="Free Fire Max"></div><div class="spc-body"><h4>FREE FIRE MAX</h4><p>Official Battle Royale Title</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">IQOO<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/iqoo.png" alt="iQOO"></div><div class="spc-body"><h4>iQOO</h4><p>Official Device Partner</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">FREEFIRE MAX<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/ffm.png" alt="Free Fire Max"></div><div class="spc-body"><h4>FREE FIRE MAX</h4><p>Official Battle Royale Title</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">IQOO<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/iqoo.png" alt="iQOO"></div><div class="spc-body"><h4>iQOO</h4><p>Official Device Partner</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">FREEFIRE MAX<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/ffm.png" alt="Free Fire Max"></div><div class="spc-body"><h4>FREE FIRE MAX</h4><p>Official Battle Royale Title</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">IQOO<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/iqoo.png" alt="iQOO"></div><div class="spc-body"><h4>iQOO</h4><p>Official Device Partner</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">FREEFIRE MAX<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/ffm.png" alt="Free Fire Max"></div><div class="spc-body"><h4>FREE FIRE MAX</h4><p>Official Battle Royale Title</p></div></div></div></span>
+            <span class="s-logo sponsor-has-popup">IQOO<div class="sponsor-popup-card"><div class="spc-inner"><div class="spc-img-wrapper"><img src="assets/iqoo.png" alt="iQOO"></div><div class="spc-body"><h4>iQOO</h4><p>Official Device Partner</p></div></div></div></span>
+        </div>
+    </div>
+</section>
+
+<!-- =============================== SOCIAL =============================== -->
+<section id="social" class="social-sec">
+    <h2 class="sec-title">SQUAD UPDATES</h2>
+    <div class="social-grid">
+        <div class="soc-item">
+            <img src="assets/mafiass.png" alt="Mafia" loading="lazy">
+            <div class="soc-name">MAFIA</div>
+            <div class="soc-overlay">
+                <div class="soc-top">Daksh Garg</div>
+                <div class="soc-info">Sniper Devil</div>
+                <div class="soc-stats">
+                    <span>❤️ 39K</span>
+                    <span>💬 575</span>
+                </div>
+            </div>
+        </div>
+        <div class="soc-item">
+            <img src="assets/deletess.png" alt="Delete" loading="lazy">
+            <div class="soc-name">DELETE</div>
+            <div class="soc-overlay">
+                <div class="soc-top">Narai Yadav</div>
+                <div class="soc-info">King og All Rusher A.K.A. Godzilla</div>
+                <div class="soc-stats">
+                    <span>❤️ 52K</span>
+                    <span>💬 395</span>
+                </div>
+            </div>
+        </div>
+        <div class="soc-item">
+            <img src="assets/aztecss.png" alt="Aztec" loading="lazy">
+            <div class="soc-name">AZTEC</div>
+            <div class="soc-overlay">
+                <div class="soc-top">Sohail Alam</div>
+                <div class="soc-info">Aztec Ka Launcher</div>
+                <div class="soc-stats">
+                    <span>❤️ 42K</span>
+                    <span>💬 706</span>
+                </div>
+            </div>
+        </div>
+        <div class="soc-item">
+            <img src="assets/shankyss.png" alt="Shanky" loading="lazy">
+            <div class="soc-name">SHANKY</div>
+            <div class="soc-overlay">
+                <div class="soc-top">Raj</div>
+                <div class="soc-info">Sensational Shanky</div>
+                <div class="soc-stats">
+                    <span>❤️ 38K</span>
+                    <span>💬 370</span>
+                </div>
+            </div>
+        </div>
+        <div class="soc-item">
+            <img src="assets/ajayss.png" alt="FozyAjay" loading="lazy">
+            <div class="soc-name">FOZYAJAY</div>
+            <div class="soc-overlay">
+                <div class="soc-top">Ajay Sharma</div>
+                <div class="soc-info">Legendary Coach & Mentor</div>
+                <div class="soc-stats">
+                    <span>❤️ 6K</span>
+                    <span>💬 140</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============================== FOOTER =============================== -->
+<footer class="main-footer">
+    <div class="footer-grid">
+        <div class="f-col">
+            <h2 class="logo">TG<span>HUB</span></h2>
+            <p>The official home of Total Gaming Esports. Redefining the Indian gaming landscape since day one.</p>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@tgesports07" target="_blank" class="s-icon" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.86-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15V9l5.2,3L10,15z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/totalgamingesports/" target="_blank" class="s-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2.163c3.204,0,3.584,0.012,4.85,0.07c3.252,0.148,4.771,1.691,4.919,4.919c0.058,1.265,0.069,1.645,0.069,4.849 c0,3.205-0.012,3.584-0.069,4.849c-0.149,3.225-1.664,4.771-4.919,4.919c-1.266,0.058-1.644,0.07-4.85,0.07 c-3.204,0-3.584-0.012-4.849-0.07c-3.26-0.149-4.771-1.699-4.919-4.92c-0.058-1.265-0.07-1.644-0.07-4.849 c0-3.204,0.013-3.583,0.07-4.849c0.149-3.227,1.664-4.771,4.919-4.919C8.416,2.175,8.796,2.163,12,2.163 M12,0 C8.741,0,8.333,0.014,7.053,0.072C2.695,0.272,0.272,2.69,0.073,7.052C0.014,8.333,0,8.741,0,12c0,3.259,0.014,3.668,0.072,4.948 c0.2,4.358,2.618,6.781,6.98,6.979C8.333,23.986,8.741,24,12,24c3.259,0,3.668-0.014,4.948-0.072 c4.354-0.2,6.782-2.618,6.979-6.98C23.986,15.668,24,15.259,24,12c0-3.259-0.014-3.668-0.072-4.948 c-0.2-4.354-2.617-6.78-6.979-6.979C15.668,0.014,15.259,0,12,0L12,0z M12,5.838c-3.403,0-6.162,2.759-6.162,6.162 c0,3.403,2.759,6.162,6.162,6.162c3.403,0,6.162-2.759,6.162-6.162C18.162,8.597,15.403,5.838,12,5.838L12,5.838z M12,15.996 c-2.206,0-3.996-1.79-3.996-3.996S9.794,8.004,12,8.004s3.996,1.79,3.996,3.996S14.206,15.996,12,15.996L12,15.996z M18.406,4.155 c-0.884,0-1.601,0.718-1.601,1.601c0,0.884,0.717,1.602,1.601,1.602c0.885,0,1.601-0.718,1.601-1.602 C20.007,4.872,19.29,4.155,18.406,4.155L18.406,4.155z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="f-col">
+            <h3>NAVIGATE</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#roster">Team Roster</a></li>
+                <li><a href="#shop">Official Merch</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+        <div class="f-col">
+            <h3>NEWSLETTER</h3>
+            <p>Get the latest match alerts and merch drops straight to your inbox.</p>
+            <div class="f-input">
+                <input type="email" placeholder="Enter your email">
+                <button>JOIN</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Total Gaming Esports. All Rights Reserved.</p>
+        <p>Designed for the TG Squad.</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG | Authenticate</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+</head>
+<body class="auth-page">
+
+<div id="tg-cursor"></div>
+
+<div class="auth-split-container">
+    <!-- Full Screen Background Slider -->
+    <div class="auth-bg-wrapper">
+        <div class="auth-visual-slider">
+            <img src="assets/p1.png" alt="">
+            <img src="assets/p2.png" alt="">
+            <img src="assets/p3.png" alt="">
+            <img src="assets/p4.png" alt="">
+            <img src="assets/p5.png" alt="">
+            <img src="assets/p1.png" alt="">
+            <img src="assets/p2.png" alt="">
+            <img src="assets/p3.png" alt="">
+            <img src="assets/p4.png" alt="">
+            <img src="assets/p5.png" alt="">
+        </div>
+        <div class="auth-overlay"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="auth-visual">
+        <h1 class="auth-quote">"LEAVE A <span>LEGACY</span> IN EVERY MATCH."</h1>
+    </div>
+    
+    <div class="auth-form-wrapper">
+        <div class="login-box" id="login-box">
+            <h2 id="auth-title">COMMAND CENTER</h2>
+
+            <form id="auth-form" onsubmit="handleAuth(event)">
+                <div class="input-group">
+                    <input type="text" id="user" required placeholder="Gamer ID" autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="pass" required placeholder="Access Code" autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn-login" id="auth-btn">AUTHENTICATE</button>
+            </form>
+
+            <div class="auth-switch">
+                <p id="switch-text">New to the squad? <span onclick="toggleAuth()">Register Here</span></p>
+            </div>
+
+            <div class="social-login">
+                <span>— OR CONNECT WITH —</span>
+                <button class="discord-btn">Discord</button>
+            </div>
+
+            <a href="index.html" class="back-home">&#8592; ABORT MISSION (Back to Home)</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Init cursor after GSAP loads
+    window.addEventListener('load', () => {
+        const cursor = document.querySelector('#tg-cursor');
+        if (!cursor || typeof gsap === 'undefined') return;
+
+        const xTo = gsap.quickTo(cursor, "x", { duration: 0.35, ease: "power3" });
+        const yTo = gsap.quickTo(cursor, "y", { duration: 0.35, ease: "power3" });
+        window.addEventListener('mousemove', e => { xTo(e.clientX); yTo(e.clientY); });
+        
+        document.addEventListener('mouseleave', () => {
+            gsap.to(cursor, { opacity: 0, duration: 0.3 });
+        });
+        document.addEventListener('mouseenter', () => {
+            gsap.to(cursor, { opacity: 1, duration: 0.3 });
+        });
+    });
+
+    let isLogin = true;
+
+    function toggleAuth() {
+        const title      = document.getElementById('auth-title');
+        const btn        = document.getElementById('auth-btn');
+        const switchText = document.getElementById('switch-text');
+
+        if (isLogin) {
+            title.innerText  = "JOIN THE SQUAD";
+            btn.innerText    = "CREATE ACCOUNT";
+            switchText.innerHTML = "Already a member? <span onclick='toggleAuth()'>Login Here</span>";
+        } else {
+            title.innerText  = "COMMAND CENTER";
+            btn.innerText    = "AUTHENTICATE";
+            switchText.innerHTML = "New to the squad? <span onclick='toggleAuth()'>Register Here</span>";
+        }
+
+        isLogin = !isLogin;
+        gsap.from('#login-box', { scale: 0.96, duration: 0.3, ease: "back.out(1.7)" });
+    }
+
+    function handleAuth(e) {
+        e.preventDefault();
+
+        const user = document.getElementById('user').value.trim();
+        const pass = document.getElementById('pass').value.trim();
+
+        if (!user || !pass) {
+            gsap.to('#login-box', { x: -8, repeat: 5, yoyo: true, duration: 0.06, ease: "none" });
+            return;
+        }
+
+        // Simulate authentication — save state and redirect to home
+        localStorage.setItem('tg_logged_in', 'true');
+        window.location.href = 'index.html';
+    }
+</script>
+</body>
+</html>

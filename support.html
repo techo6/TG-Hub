@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG | Support Desk</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+</head>
+<body class="support-page">
+
+<div id="tg-cursor"></div>
+
+<div class="support-sec">
+    <div class="support-box" id="support-box">
+        <!-- Rendered via JS based on auth state -->
+    </div>
+</div>
+
+<script>
+    // Cursor Init
+    window.addEventListener('load', () => {
+        const cursor = document.querySelector('#tg-cursor');
+        if (!cursor || typeof gsap === 'undefined') return;
+        const xTo = gsap.quickTo(cursor, "x", { duration: 0.35, ease: "power3" });
+        const yTo = gsap.quickTo(cursor, "y", { duration: 0.35, ease: "power3" });
+        window.addEventListener('mousemove', e => { xTo(e.clientX); yTo(e.clientY); });
+
+        document.addEventListener('mouseleave', () => {
+            gsap.to(cursor, { opacity: 0, duration: 0.3 });
+        });
+        document.addEventListener('mouseenter', () => {
+            gsap.to(cursor, { opacity: 1, duration: 0.3 });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const supportBox = document.getElementById('support-box');
+        const isLoggedIn = localStorage.getItem('tg_logged_in') === 'true';
+
+        if (!isLoggedIn) {
+            // Unauthenticated State
+            supportBox.innerHTML = `
+                <div class="auth-denied">
+                    <div class="auth-denied-icon">🔒</div>
+                    <h3>ACCESS RESTRICTED</h3>
+                    <p>You must be an authenticated squad member to access the TG Support Desk and submit tickets.</p>
+                    <a href="login.html" class="btn-login" style="text-decoration: none; display: inline-block; text-align: center; width: 100%; box-sizing: border-box;">AUTHENTICATE NOW</a>
+                    <a href="index.html" class="back-home">&#8592; RETURN TO BASE STATION</a>
+                </div>
+            `;
+        } else {
+            // Authenticated State
+            supportBox.innerHTML = `
+                <h2>SUPPORT DESK</h2>
+                <p class="support-sub">How can the Total Gaming team assist you today?</p>
+                <form class="support-form" onsubmit="event.preventDefault(); alert('Support ticket submitted successfully!');">
+                    <div class="input-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="">Select a category...</option>
+                            <option value="merch">Merchandise & Orders</option>
+                            <option value="tourney">Tournament Support</option>
+                            <option value="fanmail">Fan Mail</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Brief summary of your issue" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Provide details here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-login">SEND TICKET &rarr;</button>
+                </form>
+                <div style="text-align: center;">
+                    <a href="index.html" class="back-home">&#8592; RETURN TO BASE STATION</a>
+                </div>
+            `;
+        }
+
+        // Animate the box in
+        gsap.from(supportBox, { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" });
+    });
+</script>
+
+</body>
+</html>
