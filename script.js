@@ -312,3 +312,18 @@ document.querySelectorAll('.s-remind').forEach(btn => {
         gsap.to(btn, { scale: 1.1, duration: 0.15, yoyo: true, repeat: 1 });
     });
 });
+
+// Mobile: Toggle founder popup on click
+document.addEventListener('DOMContentLoaded', () => {
+    const founderTag = document.querySelector('.about-founder-tag');
+    const founderWrapper = document.querySelector('.founder-wrapper');
+    if (founderTag && founderWrapper) {
+        founderTag.addEventListener('click', (e) => {
+            if (window.innerWidth <= 900) {
+                founderWrapper.classList.toggle('show-popup');
+                e.preventDefault();
+            }
+        });
+    }
+});
+

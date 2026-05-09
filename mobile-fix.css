@@ -1,0 +1,282 @@
+/* ===========================================================
+   TOTAL GAMING - MOBILE FIX
+   Add this <link> to ALL pages: index.html, login.html, support.html
+   Place it AFTER the existing style.css link:
+   <link rel="stylesheet" href="mobile-fix.css">
+=========================================================== */
+
+/* ==============================================
+   GLOBAL: Fix overflow causing black empty space
+============================================== */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Disable custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    #tg-cursor { display: none !important; }
+    *, *::before, *::after { cursor: auto !important; }
+}
+
+/* ==============================================
+   SMALL TABLETS  (max-width: 900px)
+============================================== */
+@media (max-width: 900px) {
+
+    /* Navbar */
+    .navbar { padding: 14px 4%; }
+    .logo { font-size: 18px; }
+
+    /* Hero */
+    .glitch { font-size: clamp(36px, 10vw, 72px); letter-spacing: 4px; }
+
+    /* Roster grid: 2 columns on tablet */
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    /* About section */
+    .about-wrapper { flex-direction: column; gap: 40px; }
+    .about-stats   { flex: 1; width: 100%; }
+
+    /* Video grid */
+    .video-grid { grid-template-columns: 1fr; }
+
+    /* Shop */
+    .shop-container { flex-direction: column; gap: 30px; padding: 30px 24px; }
+    .jersey-display { min-width: unset; width: 100%; }
+
+    /* Social squad grid */
+    .social-grid { grid-template-columns: repeat(3, 1fr); }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+}
+
+/* ==============================================
+   MOBILE PHONES  (max-width: 600px)
+============================================== */
+@media (max-width: 600px) {
+
+    /* --- LAYOUT CORE ---------------------------------------- */
+    /* THE MAIN FIX: stops content being squished to left half */
+    .hero-content,
+    .about-sec,
+    .roster-sec,
+    .shop-sec,
+    .trophy-sec,
+    .media-sec,
+    .standings-sec,
+    .schedule-sec,
+    .social-sec,
+    .gallery-sec,
+    .sponsors-bar,
+    .main-footer,
+    .support-sec {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    /* Sections: reduce top/bottom padding */
+    .about-sec,
+    .roster-sec,
+    .shop-sec,
+    .trophy-sec,
+    .media-sec,
+    .standings-sec,
+    .schedule-sec,
+    .social-sec { padding-top: 60px; padding-bottom: 60px; }
+
+    /* --- NAVBAR -------------------------------------------- */
+    .nav-hamburger { display: flex !important; order: 2; }
+    .logo { font-size: 16px !important; letter-spacing: 2px !important; order: 1; }
+    .logo-img { height: 26px !important; }
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 12px 4% !important;
+        gap: 14px;
+    }
+    
+    .nav-links {
+        display: none !important; /* Hidden by default */
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        position: static !important;
+        width: 100% !important;
+        background: transparent !important;
+        padding: 10px 0 0 0 !important;
+        gap: 2px !important;
+        border-bottom: none !important;
+        order: 3;
+    }
+    .nav-links.open {
+        display: flex !important; /* Show when hamburger is clicked */
+    }
+    
+    .nav-links a, .nav-links .btn-gold {
+        font-size: 9px !important;
+        padding: 6px 4px !important;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1) !important;
+        border-radius: 20px !important;
+        flex: 1;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .nav-links .btn-gold {
+        background: var(--tg-gold) !important;
+        color: #000 !important;
+        border: none !important;
+    }
+
+    /* --- HERO ---------------------------------------------- */
+    .hero { padding: 0 5%; text-align: center; }
+    .glitch {
+        font-size: clamp(30px, 12vw, 52px);
+        letter-spacing: 3px;
+        word-break: break-word;
+    }
+    .hero-eyebrow  { font-size: 10px; letter-spacing: 3px; }
+    .hero-sub      { font-size: 12px; letter-spacing: 3px; margin: 12px 0 24px; }
+    .hero-cta-group { flex-direction: column; align-items: center; gap: 12px; }
+    .btn-main, .btn-outline { width: 80%; text-align: center; padding: 13px 20px; }
+
+    /* Section titles */
+    .sec-title { font-size: 20px; letter-spacing: 2px; margin-bottom: 30px; }
+
+    /* --- ABOUT -------------------------------------------- */
+    .about-wrapper  { flex-direction: column; gap: 30px; }
+    .about-stats    { width: 100%; flex: unset; }
+    .about-stat-card { padding: 20px 14px; }
+    .about-stat-num  { font-size: 26px; }
+    .about-headline  { font-size: 20px; }
+    .about-values-grid { grid-template-columns: 1fr; }
+
+    /* Founder popup - hidden by default on mobile, shown via JS click */
+    .founder-popup-card { 
+        display: none; 
+        position: relative; 
+        opacity: 1; 
+        visibility: visible; 
+        transform: translateY(0); 
+        margin-top: 20px; 
+    }
+    .founder-wrapper.show-popup .founder-popup-card {
+        display: block;
+    }
+
+    /* --- ROSTER -------------------------------------------- */
+    .card-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        display: grid !important;
+    }
+    .p-card { height: 420px !important; width: 100% !important; max-width: 400px; margin: 0 auto; opacity: 1 !important; transform: none !important; }
+    .p-name { font-size: 18px; word-wrap: break-word; } /* Prevent name cutoff */
+
+    /* --- GALLERY ------------------------------------------ */
+    .gallery-sec { padding-left: 0; padding-right: 0; }
+    .gallery-sec .sec-title { padding-left: calc(4% + 18px); }
+    .gallery-slide { width: 240px; height: 160px; }
+
+    /* --- SHOP --------------------------------------------- */
+    .shop-sec { padding-left: 4%; padding-right: 4%; }
+    .shop-container {
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px 18px;
+    }
+    .jersey-display { padding: 24px; }
+    .jersey-img     { max-height: 220px; }
+    .shop-info h3   { font-size: 20px; }
+    .price          { font-size: 28px; }
+
+    /* --- TIMELINE ----------------------------------------- */
+    .timeline { padding-left: 30px; }
+    .t-item::before { left: -37px; }
+    .t-content h4   { font-size: 18px; }
+    .t-content p    { font-size: 14px; display: block !important; opacity: 1 !important; }
+    .t-item         { opacity: 1 !important; transform: none !important; }
+
+    /* --- STANDINGS ---------------------------------------- */
+    .standings-table th,
+    .standings-table td { padding: 12px 10px; font-size: 12px; }
+    /* Hide less important columns */
+    .standings-table th:nth-child(4),
+    .standings-table td:nth-child(4),
+    .standings-table th:nth-child(5),
+    .standings-table td:nth-child(5) { display: none; }
+
+    /* --- SCHEDULE ----------------------------------------- */
+    .s-card { flex-direction: column; align-items: flex-start; gap: 10px; padding: 18px 16px; }
+    .s-remind { width: 100%; text-align: center; }
+
+    /* --- VIDEO -------------------------------------------- */
+    .video-grid { grid-template-columns: 1fr; }
+    .v-side-grid { gap: 14px; }
+    .featured .v-thumb { height: 220px; }
+    .mini { height: 100px !important; }
+    .play-btn { width: 44px; height: 44px; font-size: 16px; }
+
+    /* --- SQUAD UPDATES (social) --------------------------- */
+    .social-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    .soc-item { 
+        width: 100% !important; 
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* --- FOOTER ------------------------------------------- */
+    .footer-grid   { grid-template-columns: 1fr; gap: 30px; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 6px; }
+    .main-footer   { padding: 50px 4% 24px; }
+
+    /* --- SPONSORS MARQUEE --------------------------------- */
+    .track { gap: 40px; }
+    .s-logo { font-size: 10px; letter-spacing: 2px; }
+}
+
+/* ==============================================
+   VERY SMALL PHONES  (max-width: 380px)
+============================================== */
+@media (max-width: 380px) {
+    .glitch { font-size: 28px; letter-spacing: 2px; }
+    .card-grid { grid-template-columns: 1fr !important; }
+    .p-card { height: 420px !important; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+}
+
+/* ==============================================
+   LOGIN PAGE MOBILE
+============================================== */
+@media (max-width: 700px) {
+    .auth-split-container { flex-direction: column; }
+    .auth-visual { display: none; } /* hide quote panel on mobile */
+    .auth-form-wrapper {
+        flex: 1;
+        width: 100%;
+        padding: 30px 20px;
+        min-height: 100vh;
+        align-items: center;
+    }
+    .login-box { padding: 30px 24px; max-width: 100%; }
+    .auth-quote { font-size: 20px; }
+}
+
+/* ==============================================
+   SUPPORT PAGE MOBILE
+============================================== */
+@media (max-width: 600px) {
+    .support-page { padding: 30px 4%; }
+    .support-box  { padding: 28px 20px; }
+    .support-box h2 { font-size: 18px; }
+}
